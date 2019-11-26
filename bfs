@@ -1,5 +1,6 @@
 #include<iostream>
 #include<list>
+#include<queue>
 #include<map>
 using namespace std;
 
@@ -33,7 +34,7 @@ class graph
             T key=q.front();
             cout<<key<<"->";
             q.pop();
-        }
+        
         //for the neighbours of the current key find out the places which r not visited
           for (auto neighbour:adjlist[key])
           {
@@ -43,11 +44,11 @@ class graph
               done[neighbour]=true;
                 }
           }
+          }
     }
 
 };
-   
-};
+  
 int main ()
 {
     graph<string> g;
