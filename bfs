@@ -59,7 +59,7 @@ int main ()
     g.addvertex ("modi","trump",true);
     g.addvertex ("modi","yogi",true);
     g.addvertex ("yogi","prabhu",false);
-   // g.addvertex ("yogi","modi",true);
+    g.addvertex ("yogi","modi",true);
   //  g.addvertex ("trump","modi",true);
     g.bfs ("modi");
     return 0;
