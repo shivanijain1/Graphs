@@ -20,17 +20,17 @@ edges* kruskal(edges* edge, int v,int e){
     int* parent =new int [v];//parent array for union find algo
     edges* rslt=new edges[v-1];
     for (int i=0;i<v;i++){
-        parent[i]=i;
+        parent[i]=i;//initailly parent of vertex is itself
     }
     int i=0,count=0;
-    while (count<v-1){
+    while (count<v-1){// total edges must be vertex-1
         edges curr = edge[i];
         int srsp = getparent (curr.srs,parent);//srs parent
         int destp= getparent(curr.dest,parent);// dest parent
-        if (srsp!=destp){
+        if (srsp!=destp){// souce parent and dest parent must not be same for acyclic graph
             rslt[count]=curr;
             count++;
-            parent[srsp]=destp;
+            parent[srsp]=destp;//after connecting update dest parent as a source parent
         }
         i++;
     }
@@ -47,7 +47,7 @@ int main() {
 	    edge[i].wt=w;
 	    
 	}
-	edges* rslt = kruskal (edge,v,e);
+	edges* rslt = kruskal (edge,v,e);// output array
 	for (int i=0;i<v-1;i++){
 	    if (rslt[i].srs<rslt[i].dest){
 	        cout<<rslt[i].srs<<" "<<rslt[i].dest<<" "<<rslt[i].wt<<endl;
