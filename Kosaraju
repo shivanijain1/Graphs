@@ -53,8 +53,8 @@ int main() {
 	int e;cin>>e;
 	for (int i=0;i<e;i++){
 	    int v1,v2;cin>>v1>>v2;
-	    edges[v1-1].push_back(v2-1);
-	    edgesT[v2-1].push_back(v1-1);
+	    edges[v1-1].push_back(v2-1);//edges
+	    edgesT[v2-1].push_back(v1-1);//tranpose edge
 	}
 	 unordered_set<unordered_set<int>*>* component=scc(edges,edgesT,n);
 	 unordered_set<unordered_set<int>*>::iterator it=component->begin();
